@@ -16,7 +16,6 @@ Write a console application that does the following:
 
 ********************************
 
-
 LAB2 - PRO670 - Seneca College
 ******************************
 Instructions 
@@ -35,6 +34,7 @@ Write an application that summarizes numbers provided by the user:
 ********************************
 
 LAB3 - PRO670 - Seneca College
+******************************
 
 Instructions 
 
