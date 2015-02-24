@@ -33,3 +33,20 @@ Write an application that summarizes numbers provided by the user:
 3. Provide the user the output they request.
 
 ********************************
+
+LAB3 - PRO670 - Seneca College
+
+Instructions 
+
+Create a basic GUI application to demonstrate skils learned, as follows. 
+
+1. Create a new Windows Forms application in C#, using Visual Studio. 
+
+2. Design your Form surface as follows:
+* Add a text box labelled “Age” to the form. 
+* Add a button labelled “Calculate” to the form. 
+
+3. Make your form behave as follows:
+* When the user clicks the Calculate button, determine the user's birth year based on the current year and the age the user has input into the Age text box. 
+
+*********************************
