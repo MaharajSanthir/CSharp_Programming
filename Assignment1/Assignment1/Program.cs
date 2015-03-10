@@ -282,7 +282,7 @@ namespace Assignment1
                 Console.BackgroundColor = ConsoleColor.Gray;
                 Console.Write(" ");
                 Console.BackgroundColor = ConsoleColor.White;
-                Console.Write(" if they match, you will get one point.               \n");
+                Console.Write(" If color and number match, you will get one point.   \n");
                 // Each player score is printed
                 // To maintain a justified look for the score board,
                 // Player name is filtered for 8 charactors and any name

@@ -21,26 +21,20 @@ namespace Assignment1
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Clear();
 
-            // Begin a game by initating a Game class
             Game Game1 = new Game();
-            // Begin the Game play.
             Game1.GamePlay();
-           
          }
-        // Game class that runs the game after getting player information and preparing cards into game table.
         class Game
-        {
-            // Fields
+        {   //Fields
             public List<Player> PlayersList = new List<Player>();
             public BoxOfPlayingCards DeckOfCards = new BoxOfPlayingCards();
             public GameTable MemoryGameTable = new GameTable();
-            // Constructor
+            // Public: Constructor and methods 
             public Game()
             {
                 WelcomeScreen();
                 PrepareGame();
             }
-            // Public Method
             public void GamePlay()
             {
                 while (PlayersList.Sum(item => item.PlayerScore) != 26)
@@ -57,7 +51,6 @@ namespace Assignment1
                         // Uncommenting this will display all cards in the grid just after the 
                         // display of "player turn" screen and before the player enter the first coordination.
                         // It will display the grid for all players.
-
                         /*
                         Display_PlayerTurnHeader(CurrentPlayerNum);
                         MemoryGameTable.Display_CardGrid(false, null, null);
@@ -98,7 +91,6 @@ namespace Assignment1
                             CurrentPlayer.PlayerScore++;
                             MemoryGameTable.CardGrid[CurrentPlayer.FirstSelection.x, CurrentPlayer.FirstSelection.y] = null;
                             MemoryGameTable.CardGrid[CurrentPlayer.SecondSelection.x, CurrentPlayer.SecondSelection.y] = null;
-
                         }
                         else
                         {
@@ -110,9 +102,7 @@ namespace Assignment1
                             Console.Write("    \n");
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.BackgroundColor = ConsoleColor.Gray;
-
                         }
-
                         // Clear player selections so next time it stores the new selections.
                         CurrentPlayer.FirstSelection = null;
                         CurrentPlayer.SecondSelection = null;
@@ -132,8 +122,6 @@ namespace Assignment1
                 bool isNumber = false;
 
                 Console.WriteLine("Welcome to Memory Game");
-
-                // Prompt for Number of Players. Validate user entry for numbers 2, 3 or 4
                 Console.Write("Enter number of players (Min 2 Max 4):");
                 while (!isNumber)
                 {
@@ -144,7 +132,6 @@ namespace Assignment1
                         Console.Write("Wrong, Enter only numbers between 2-4:");
                 }
 
-                // Add players to the list
                 for (int i = 0; i < InputNumPlayers; i++)
                     PlayersList.Add(new Player(i));
 
@@ -261,12 +248,10 @@ namespace Assignment1
                 Console.Clear();
             }
         }
-        // A game table to arrange cards and display cards for players to select.
         class GameTable
-        {
-            //Field
+        {   // Fields
             public Card[,] CardGrid = new Card[4, 13];
-            //Public Methods
+            // Public Methods
             public void ArrangeCards_Into_CardGrid(ref BoxOfPlayingCards DeckOfCardsPassed)
             {
                 int x = 0, y = 0;
@@ -320,7 +305,7 @@ namespace Assignment1
                     Console.Write("\n");
                 }
             }
-            // Private Method
+            // Private Methods
             private void DrawCard_ToConsole(ref Card card)
             {
                 Console.BackgroundColor = ConsoleColor.White;
@@ -349,10 +334,8 @@ namespace Assignment1
 
             }
         }
-        // Stores the player information and allow player to select cards from game table.
         class Player
-        {
-            //Fields
+        {   // Fields
             public int PlayerNum { get; set; }
             public int PlayerScore { get; set; }
             public string PlayerName { get; set; }
@@ -433,10 +416,8 @@ namespace Assignment1
 
             }
         }
-        // Generate a playing card with card number, card color and suit. Also includes a boolean to note if the card is placed faced down.
         class Card
-        {
-            //Fields
+        {   //Fields
             private char Num;
             private bool Red;
             private char Suit;
@@ -453,12 +434,10 @@ namespace Assignment1
                 Suit = SuitPassed;
             }
         }
-        // Represent a box of playing card; therefore it contains 52 sets of cards in a List of Card class format.
         class BoxOfPlayingCards
-        {
-            //Fields
+        {   // Fields
             public List<Card> AllOfPlayingCards = new List<Card>();
-            //Public Methods
+            // Public Methods
             public BoxOfPlayingCards()
             {
                 AddCardsBySuit('\u2660', false); // Spade
@@ -488,11 +467,9 @@ namespace Assignment1
                 AllOfPlayingCards.Add(new Card(SuitRed, SuitUnicode, Convert.ToChar('K')));
             }
         }
-        // A coordinate class to use with the grid by using x and y for position variables.
         class Coordinate
-        {
-            //Fields
-            public int x, y;
+        {   // Fields
+             public int x, y;
         }
     }
 }
