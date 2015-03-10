@@ -4,3 +4,9 @@ T:\Lab1\Lab1\Lab1\bin\Debug\Lab1.pdb
 T:\Lab1\Lab1\Lab1\obj\Debug\Lab1.csprojResolveAssemblyReference.cache
 T:\Lab1\Lab1\Lab1\obj\Debug\Lab1.exe
 T:\Lab1\Lab1\Lab1\obj\Debug\Lab1.pdb
+C:\Users\Maharaj_2\Source\Repos\CSharp_Programming\Lab1\Lab1\bin\Debug\Lab1.exe.config
+C:\Users\Maharaj_2\Source\Repos\CSharp_Programming\Lab1\Lab1\obj\Debug\Lab1.exe
+C:\Users\Maharaj_2\Source\Repos\CSharp_Programming\Lab1\Lab1\obj\Debug\Lab1.pdb
+C:\Users\Maharaj_2\Source\Repos\CSharp_Programming\Lab1\Lab1\bin\Debug\Lab1.exe
+C:\Users\Maharaj_2\Source\Repos\CSharp_Programming\Lab1\Lab1\bin\Debug\Lab1.pdb
+C:\Users\Maharaj_2\Source\Repos\CSharp_Programming\Lab1\Lab1\obj\Debug\Lab1.csprojResolveAssemblyReference.cache
