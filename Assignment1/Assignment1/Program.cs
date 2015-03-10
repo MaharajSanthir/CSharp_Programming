@@ -41,13 +41,16 @@ namespace Assignment1
             public Game()
             {   // Prompt for player information to begin game
                 WelcomeScreen();
-                // 
+                // Call prepare game method to prepare cards and table
                 PrepareGame();
             }
             // Public Method
             // Coordinate the game play: each player get a turn to select a card and winner gets one point.
             public void GamePlay()
             {
+                // End the game when the the sum of all players score is 26
+                // where the all cards are matched
+                // Programmer note: Sum function for List require System.Linq (Make sure you remember this for future coding)
                 while (PlayersList.Sum(item => item.PlayerScore) != 26)
                 {
                     foreach (Player CurrentPlayer in PlayersList)
@@ -55,6 +58,7 @@ namespace Assignment1
                         bool FlipAllCards_FaceDown = true;
                         int CurrentPlayerNum = CurrentPlayer.PlayerNum + 1;
 
+                        // Display the player turn screen with player name
                         Display_PlayerTurnScreen(CurrentPlayerNum);
 
                         // Uncomment the below commented code - To see all cards - Use it for testing purpose.
@@ -71,19 +75,37 @@ namespace Assignment1
                         Console.Clear();
                         */
 
+                        // Player Turn Screen
+                        // Generate screen to ask for First Selection
                         Display_PlayerTurnHeader(CurrentPlayerNum);
+                        // Display the game table where the grid of card is shown
+                        // At the his point the player hasn't selected the first card yet
+                        // therefore all cards are displayed faced down
                         MemoryGameTable.Display_CardGrid(FlipAllCards_FaceDown, null, null);
+                        // Ask the player to select the first card from the grid passed
                         CurrentPlayer.SelectCard(ref MemoryGameTable.CardGrid);
                         Console.Clear();
 
+                        // Player Turn Screen
+                        // Generate screen to ask for Second Selection
                         Display_PlayerTurnHeader(CurrentPlayerNum);
+                        // Display the game table where the grid of card is shown
+                        // At the his point the player has already selected the first card,
+                        // therefore display the first card face up, and the rest as faced down
                         MemoryGameTable.Display_CardGrid(FlipAllCards_FaceDown, CurrentPlayer.FirstSelection, null);
+                        // Ask the player to select the second card from the grid passed
                         CurrentPlayer.SelectCard(ref MemoryGameTable.CardGrid);
                         Console.Clear();
 
+                        // Player Turn Screen
+                        // Generate screen to display result as match or not and points earned
                         Display_PlayerTurnHeader(CurrentPlayerNum);
+                        // Display the game table where the grid of card is shown
+                        // At the his point the player has already selected the first and second card,
+                        // therefore display the first card and second card face up, and the rest as faced down
                         MemoryGameTable.Display_CardGrid(FlipAllCards_FaceDown, CurrentPlayer.FirstSelection, CurrentPlayer.SecondSelection);
 
+                        // if the first and second card color and number matches, the player gets one point 
                         if (
                             (MemoryGameTable.CardGrid[CurrentPlayer.FirstSelection.x, CurrentPlayer.FirstSelection.y].CardNum ==
                             MemoryGameTable.CardGrid[CurrentPlayer.SecondSelection.x, CurrentPlayer.SecondSelection.y].CardNum)
@@ -92,6 +114,8 @@ namespace Assignment1
                             MemoryGameTable.CardGrid[CurrentPlayer.SecondSelection.x, CurrentPlayer.SecondSelection.y].CardRed)
                         )
                         {
+                            // Cards matches
+                            // Displaty MATCH
                             Console.Write("\n    ");
                             Console.BackgroundColor = ConsoleColor.Black;
                             Console.ForegroundColor = ConsoleColor.Green;
@@ -100,13 +124,17 @@ namespace Assignment1
                             Console.Write("    \n");
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.BackgroundColor = ConsoleColor.Gray;
+                            // Player get one point
                             CurrentPlayer.PlayerScore++;
+                            // Make the first and second card null in the grid to indicate they are removed
                             MemoryGameTable.CardGrid[CurrentPlayer.FirstSelection.x, CurrentPlayer.FirstSelection.y] = null;
                             MemoryGameTable.CardGrid[CurrentPlayer.SecondSelection.x, CurrentPlayer.SecondSelection.y] = null;
 
                         }
                         else
                         {
+                            // Cards did not match
+                            // Display NOT A MATCH
                             Console.Write("\n  ");
                             Console.BackgroundColor = ConsoleColor.Black;
                             Console.ForegroundColor = ConsoleColor.Red;
@@ -115,7 +143,7 @@ namespace Assignment1
                             Console.Write("    \n");
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.BackgroundColor = ConsoleColor.Gray;
-
+                            // 
                         }
 
                         // Clear player selections so next time it stores the new selections.
@@ -275,6 +303,8 @@ namespace Assignment1
             }
             private void Display_PlayerTurnScreen(int PlayerNumPassed)
             {
+                // Display a screen before the player turn begins
+                // Allow user to press enter to indicate that he or she is ready
                 Display_PlayerTurnHeader(PlayerNumPassed);
                 for (int i = 0; i < 3; i++)
                     Console.WriteLine(" ");
