@@ -42,7 +42,7 @@ namespace Assignment1
                     foreach (Player CurrentPlayer in PlayersList)
                     {
                         bool FlipAllCards_FaceDown = true;
-                        int CurrentPlayerNum = CurrentPlayer.PlayerNum + 1;
+                        int CurrentPlayerNum = CurrentPlayer.PlayerNum;
 
                         Display_PlayerTurnScreen(CurrentPlayerNum);
 
@@ -231,15 +231,22 @@ namespace Assignment1
                 Console.BackgroundColor = ConsoleColor.Gray;
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine();
-                Console.WriteLine("                                  Player {0} - {1}!\n", PlayerNumPassed, PlayersList[PlayerNumPassed-1].PlayerName);
+                Console.WriteLine("                                  Player {0} - {1}!\n", PlayerNumPassed+1, PlayersList[PlayerNumPassed].PlayerName);
             }
             private void Display_PlayerTurnScreen(int PlayerNumPassed)
             {
                 Display_PlayerTurnHeader(PlayerNumPassed);
                 for (int i = 0; i < 3; i++)
                     Console.WriteLine(" ");
+
+                string OtherPlayersNames = "";
+                for (int b = 0; b < PlayersList.Count(); b++)
+                    if ((PlayerNumPassed) != b)
+                        OtherPlayersNames += PlayersList[b].PlayerName + ", ";
+
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("                              {0}, it's your turn!\n", PlayersList[PlayerNumPassed-1].PlayerName);
+                Console.WriteLine("                     {0}please step away from the screen.\n\n", OtherPlayersNames);
+                Console.WriteLine("                              {0}, it's your turn!\n", PlayersList[PlayerNumPassed].PlayerName);
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine();
                 Console.WriteLine();
