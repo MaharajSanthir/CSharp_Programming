@@ -32,7 +32,7 @@ namespace Orwell_S_E_FruityMart
             dataFilePath = Path.Combine(strExecFolder, "customer.dat");
             InvenotryDataFilePath = Path.Combine(strExecFolder, "inventory.dat");
 
-            FillInventoryList();
+            //FillInventoryList();
 
             FillCustomerList();
             LoadCustomerListTo_ListBox();

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Orwell_S_E_FruityMart
 {
+    [Serializable]
     class Products
     {
         public int ProdID { get; set; }
