@@ -30,28 +30,31 @@
         {
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.gbx_AddInventory = new System.Windows.Forms.GroupBox();
-            this.tbx_ProdName = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btn_AddProd = new System.Windows.Forms.Button();
             this.btn_AddProdClear = new System.Windows.Forms.Button();
+            this.btn_AddProd = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbx_ProdName = new System.Windows.Forms.Label();
             this.gbx_ProdDetails = new System.Windows.Forms.GroupBox();
-            this.gbx_EditProduct = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.tbx_Edit_ProdName = new System.Windows.Forms.TextBox();
-            this.tbx_Edit_ProdPrice = new System.Windows.Forms.TextBox();
-            this.tbx_Edit_ProdQuantity = new System.Windows.Forms.TextBox();
-            this.btn_Edit_Cancel = new System.Windows.Forms.Button();
-            this.btn_Edit_SaveChanges = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.gbx_EditProduct = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_Edit_SaveChanges = new System.Windows.Forms.Button();
+            this.btn_Edit_Cancel = new System.Windows.Forms.Button();
+            this.tbx_Edit_ProdQuantity = new System.Windows.Forms.TextBox();
+            this.tbx_Edit_ProdPrice = new System.Windows.Forms.TextBox();
+            this.tbx_Edit_ProdName = new System.Windows.Forms.TextBox();
+            this.gbx_AddProd_Error = new System.Windows.Forms.GroupBox();
+            this.lbl_AddProd_Error = new System.Windows.Forms.Label();
             this.gbx_AddInventory.SuspendLayout();
             this.gbx_ProdDetails.SuspendLayout();
             this.gbx_EditProduct.SuspendLayout();
+            this.gbx_AddProd_Error.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
@@ -79,44 +82,24 @@
             this.gbx_AddInventory.TabStop = false;
             this.gbx_AddInventory.Text = "Add Product";
             // 
-            // tbx_ProdName
+            // btn_AddProdClear
             // 
-            this.tbx_ProdName.AutoSize = true;
-            this.tbx_ProdName.Location = new System.Drawing.Point(26, 31);
-            this.tbx_ProdName.Name = "tbx_ProdName";
-            this.tbx_ProdName.Size = new System.Drawing.Size(75, 13);
-            this.tbx_ProdName.TabIndex = 0;
-            this.tbx_ProdName.Text = "Product Name";
+            this.btn_AddProdClear.Location = new System.Drawing.Point(29, 122);
+            this.btn_AddProdClear.Name = "btn_AddProdClear";
+            this.btn_AddProdClear.Size = new System.Drawing.Size(75, 23);
+            this.btn_AddProdClear.TabIndex = 7;
+            this.btn_AddProdClear.Text = "Clear";
+            this.btn_AddProdClear.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // btn_AddProd
             // 
-            this.textBox4.Location = new System.Drawing.Point(121, 28);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Product Price";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(121, 57);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 3;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(121, 84);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 4;
+            this.btn_AddProd.Location = new System.Drawing.Point(146, 122);
+            this.btn_AddProd.Name = "btn_AddProd";
+            this.btn_AddProd.Size = new System.Drawing.Size(75, 23);
+            this.btn_AddProd.TabIndex = 6;
+            this.btn_AddProd.Text = "Add Product";
+            this.btn_AddProd.UseVisualStyleBackColor = true;
+            this.btn_AddProd.Click += new System.EventHandler(this.btn_AddProd_Click);
             // 
             // label2
             // 
@@ -127,26 +110,48 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Product Quantity";
             // 
-            // btn_AddProd
+            // textBox6
             // 
-            this.btn_AddProd.Location = new System.Drawing.Point(146, 122);
-            this.btn_AddProd.Name = "btn_AddProd";
-            this.btn_AddProd.Size = new System.Drawing.Size(75, 23);
-            this.btn_AddProd.TabIndex = 6;
-            this.btn_AddProd.Text = "Add Product";
-            this.btn_AddProd.UseVisualStyleBackColor = true;
+            this.textBox6.Location = new System.Drawing.Point(121, 84);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 4;
             // 
-            // btn_AddProdClear
+            // textBox5
             // 
-            this.btn_AddProdClear.Location = new System.Drawing.Point(29, 122);
-            this.btn_AddProdClear.Name = "btn_AddProdClear";
-            this.btn_AddProdClear.Size = new System.Drawing.Size(75, 23);
-            this.btn_AddProdClear.TabIndex = 7;
-            this.btn_AddProdClear.Text = "Clear";
-            this.btn_AddProdClear.UseVisualStyleBackColor = true;
+            this.textBox5.Location = new System.Drawing.Point(121, 57);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Product Price";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(121, 28);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 1;
+            // 
+            // tbx_ProdName
+            // 
+            this.tbx_ProdName.AutoSize = true;
+            this.tbx_ProdName.Location = new System.Drawing.Point(26, 31);
+            this.tbx_ProdName.Name = "tbx_ProdName";
+            this.tbx_ProdName.Size = new System.Drawing.Size(75, 13);
+            this.tbx_ProdName.TabIndex = 0;
+            this.tbx_ProdName.Text = "Product Name";
             // 
             // gbx_ProdDetails
             // 
+            this.gbx_ProdDetails.Controls.Add(this.gbx_EditProduct);
             this.gbx_ProdDetails.Controls.Add(this.button1);
             this.gbx_ProdDetails.Location = new System.Drawing.Point(168, 211);
             this.gbx_ProdDetails.Name = "gbx_ProdDetails";
@@ -154,6 +159,15 @@
             this.gbx_ProdDetails.TabIndex = 15;
             this.gbx_ProdDetails.TabStop = false;
             this.gbx_ProdDetails.Text = "Product Details";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(182, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Edit";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // gbx_EditProduct
             // 
@@ -165,78 +179,12 @@
             this.gbx_EditProduct.Controls.Add(this.tbx_Edit_ProdQuantity);
             this.gbx_EditProduct.Controls.Add(this.tbx_Edit_ProdPrice);
             this.gbx_EditProduct.Controls.Add(this.tbx_Edit_ProdName);
-            this.gbx_EditProduct.Location = new System.Drawing.Point(305, 24);
+            this.gbx_EditProduct.Location = new System.Drawing.Point(128, 86);
             this.gbx_EditProduct.Name = "gbx_EditProduct";
             this.gbx_EditProduct.Size = new System.Drawing.Size(240, 169);
             this.gbx_EditProduct.TabIndex = 16;
             this.gbx_EditProduct.TabStop = false;
             this.gbx_EditProduct.Text = "Edit Product";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(182, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // tbx_Edit_ProdName
-            // 
-            this.tbx_Edit_ProdName.Location = new System.Drawing.Point(117, 28);
-            this.tbx_Edit_ProdName.Name = "tbx_Edit_ProdName";
-            this.tbx_Edit_ProdName.Size = new System.Drawing.Size(100, 20);
-            this.tbx_Edit_ProdName.TabIndex = 0;
-            // 
-            // tbx_Edit_ProdPrice
-            // 
-            this.tbx_Edit_ProdPrice.Location = new System.Drawing.Point(117, 54);
-            this.tbx_Edit_ProdPrice.Name = "tbx_Edit_ProdPrice";
-            this.tbx_Edit_ProdPrice.Size = new System.Drawing.Size(100, 20);
-            this.tbx_Edit_ProdPrice.TabIndex = 1;
-            // 
-            // tbx_Edit_ProdQuantity
-            // 
-            this.tbx_Edit_ProdQuantity.Location = new System.Drawing.Point(117, 84);
-            this.tbx_Edit_ProdQuantity.Name = "tbx_Edit_ProdQuantity";
-            this.tbx_Edit_ProdQuantity.Size = new System.Drawing.Size(100, 20);
-            this.tbx_Edit_ProdQuantity.TabIndex = 2;
-            // 
-            // btn_Edit_Cancel
-            // 
-            this.btn_Edit_Cancel.Location = new System.Drawing.Point(142, 122);
-            this.btn_Edit_Cancel.Name = "btn_Edit_Cancel";
-            this.btn_Edit_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.btn_Edit_Cancel.TabIndex = 3;
-            this.btn_Edit_Cancel.Text = "Cancel";
-            this.btn_Edit_Cancel.UseVisualStyleBackColor = true;
-            // 
-            // btn_Edit_SaveChanges
-            // 
-            this.btn_Edit_SaveChanges.Location = new System.Drawing.Point(22, 122);
-            this.btn_Edit_SaveChanges.Name = "btn_Edit_SaveChanges";
-            this.btn_Edit_SaveChanges.Size = new System.Drawing.Size(99, 23);
-            this.btn_Edit_SaveChanges.TabIndex = 4;
-            this.btn_Edit_SaveChanges.Text = "Save Changes";
-            this.btn_Edit_SaveChanges.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Product Name";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 58);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Product Price";
             // 
             // label5
             // 
@@ -247,12 +195,87 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Product Quantity";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Product Price";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Product Name";
+            // 
+            // btn_Edit_SaveChanges
+            // 
+            this.btn_Edit_SaveChanges.Location = new System.Drawing.Point(22, 122);
+            this.btn_Edit_SaveChanges.Name = "btn_Edit_SaveChanges";
+            this.btn_Edit_SaveChanges.Size = new System.Drawing.Size(99, 23);
+            this.btn_Edit_SaveChanges.TabIndex = 4;
+            this.btn_Edit_SaveChanges.Text = "Save Changes";
+            this.btn_Edit_SaveChanges.UseVisualStyleBackColor = true;
+            // 
+            // btn_Edit_Cancel
+            // 
+            this.btn_Edit_Cancel.Location = new System.Drawing.Point(142, 122);
+            this.btn_Edit_Cancel.Name = "btn_Edit_Cancel";
+            this.btn_Edit_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.btn_Edit_Cancel.TabIndex = 3;
+            this.btn_Edit_Cancel.Text = "Cancel";
+            this.btn_Edit_Cancel.UseVisualStyleBackColor = true;
+            // 
+            // tbx_Edit_ProdQuantity
+            // 
+            this.tbx_Edit_ProdQuantity.Location = new System.Drawing.Point(117, 84);
+            this.tbx_Edit_ProdQuantity.Name = "tbx_Edit_ProdQuantity";
+            this.tbx_Edit_ProdQuantity.Size = new System.Drawing.Size(100, 20);
+            this.tbx_Edit_ProdQuantity.TabIndex = 2;
+            // 
+            // tbx_Edit_ProdPrice
+            // 
+            this.tbx_Edit_ProdPrice.Location = new System.Drawing.Point(117, 54);
+            this.tbx_Edit_ProdPrice.Name = "tbx_Edit_ProdPrice";
+            this.tbx_Edit_ProdPrice.Size = new System.Drawing.Size(100, 20);
+            this.tbx_Edit_ProdPrice.TabIndex = 1;
+            // 
+            // tbx_Edit_ProdName
+            // 
+            this.tbx_Edit_ProdName.Location = new System.Drawing.Point(117, 28);
+            this.tbx_Edit_ProdName.Name = "tbx_Edit_ProdName";
+            this.tbx_Edit_ProdName.Size = new System.Drawing.Size(100, 20);
+            this.tbx_Edit_ProdName.TabIndex = 0;
+            // 
+            // gbx_AddProd_Error
+            // 
+            this.gbx_AddProd_Error.Controls.Add(this.lbl_AddProd_Error);
+            this.gbx_AddProd_Error.Location = new System.Drawing.Point(350, 34);
+            this.gbx_AddProd_Error.Name = "gbx_AddProd_Error";
+            this.gbx_AddProd_Error.Size = new System.Drawing.Size(200, 100);
+            this.gbx_AddProd_Error.TabIndex = 16;
+            this.gbx_AddProd_Error.TabStop = false;
+            this.gbx_AddProd_Error.Text = "Error";
+            // 
+            // lbl_AddProd_Error
+            // 
+            this.lbl_AddProd_Error.AutoSize = true;
+            this.lbl_AddProd_Error.Location = new System.Drawing.Point(7, 24);
+            this.lbl_AddProd_Error.Name = "lbl_AddProd_Error";
+            this.lbl_AddProd_Error.Size = new System.Drawing.Size(0, 13);
+            this.lbl_AddProd_Error.TabIndex = 0;
+            // 
             // InventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 491);
-            this.Controls.Add(this.gbx_EditProduct);
+            this.Controls.Add(this.gbx_AddProd_Error);
             this.Controls.Add(this.gbx_ProdDetails);
             this.Controls.Add(this.gbx_AddInventory);
             this.Controls.Add(this.listBox1);
@@ -264,6 +287,8 @@
             this.gbx_ProdDetails.ResumeLayout(false);
             this.gbx_EditProduct.ResumeLayout(false);
             this.gbx_EditProduct.PerformLayout();
+            this.gbx_AddProd_Error.ResumeLayout(false);
+            this.gbx_AddProd_Error.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -291,6 +316,8 @@
         private System.Windows.Forms.TextBox tbx_Edit_ProdQuantity;
         private System.Windows.Forms.TextBox tbx_Edit_ProdPrice;
         private System.Windows.Forms.TextBox tbx_Edit_ProdName;
+        private System.Windows.Forms.GroupBox gbx_AddProd_Error;
+        private System.Windows.Forms.Label lbl_AddProd_Error;
 
     }
 }

@@ -74,6 +74,22 @@ namespace Orwell_S_E_FruityMart
 
         }
 
+        private void btn_AddProd_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private bool Validate_NewProduct()
+        {
+            bool valid = true;
+
+            if(tbx_ProdName.Text == "")
+            {
+                lbl_AddProd_Error.Text = "Product name should not be empty.";
+                valid = false;
+            }
+
+            return valid;
+        }
     }
 }

@@ -41,7 +41,8 @@ namespace Orwell_S_E_FruityMart
             gbx_Edit_Error.Hide();
             gbx_NewCust_Error.Hide();
 
-            lbx_CustomerList.SelectedIndex = 0;
+            if (lbx_CustomerList.Items.Count > 0)
+                lbx_CustomerList.SelectedIndex = 0;
             ShowCustomerDetails();
         }
 
